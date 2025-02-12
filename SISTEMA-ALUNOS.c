@@ -42,7 +42,9 @@ int main(){
 	float nota;
 	int contN = 0;
 	char notaLancada;
-	float media[contN];
+	float media;
+	char sn;
+	int notaA[10];
 	
 	do{
 		
@@ -64,12 +66,27 @@ int main(){
 		if(notaLancada == 'n')
 			break;
 		
-		printf("Digite o valor da nota: \n");
-		scanf("%f", &nota);
-		contN++;
+		do{
+			printf("Digite o valor da nota: \n");
+			scanf("%f", &nota);
+			contN++;
+			
+			printf("Deseja lançar mais uma nota pra esse aluno(s/n): \n");
+			scanf(" %c", &sn);
+			
+			notaA[10] += nota;
+		}while(sn == 's');
 		
-		media[contN] = nota 
+		media = notaA[10] / contN++;
+		for(int i = 0; i < contA; i++)
+			if(numM == cadastro[i].matricula){
+				printf("Nome do aluno: %s\n", cadastro[i].nome);
+		        printf("Numero de matrícula: %d\n", cadastro[i].matricula);
+		        printf("Nome do curso: %s\n", cadastro[i].nome_curso);
+		        printf("Média do aluno: %02f\n\n", media);
+			}
 		
+		notaA[10] = 0;
 	}while (1);
 	
 	
